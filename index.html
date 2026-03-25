@@ -3,11 +3,10 @@ index.html
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HERIO IA | Ibiza 2026 - Marketing Digital de Élite</title>
     
     <link rel="icon" type="image/png" href="https://i.imgur.com/Pt7TbSj.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -20,199 +19,185 @@ index.html
             --whatsapp: #25d366;
         }
 
-        /* --- PIEL DE LA PÁGINA: CONTRASTE MÁXIMO --- */
+        /* --- CONFIGURACIÓN RESPONSIVA --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--negro); color: var(--blanco-fuerte); line-height: 1.6; overflow-x: hidden; }
+        body { background-color: var(--negro); color: var(--blanco-fuerte); line-height: 1.4; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-        /* --- NAVEGACIÓN SUPERIOR --- */
+        /* --- HEADER ADAPTADO --- */
         header {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 20px 5%; background: rgba(1, 1, 1, 0.98);
+            display: flex; flex-direction: row; align-items: center; justify-content: space-between;
+            padding: 10px 5%; background: rgba(1, 1, 1, 0.95);
             position: fixed; width: 100%; top: 0; z-index: 1000;
-            border-bottom: 3px solid var(--oro);
-            backdrop-filter: blur(20px); gap: 15px;
+            border-bottom: 2px solid var(--oro); backdrop-filter: blur(10px);
         }
-        .logo-box { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 45px; filter: drop-shadow(0 0 10px var(--azul-ia)); }
-        .logo-text { font-weight: 900; letter-spacing: 5px; text-transform: uppercase; font-size: 1.6rem; color: var(--oro); }
-        
-        .nav-links { display: flex; gap: 10px; width: 100%; justify-content: center; }
-        .btn-top {
-            flex: 1; max-width: 140px; padding: 12px 5px; text-align: center;
-            border: 2px solid var(--blanco-fuerte); color: var(--blanco-fuerte);
-            text-decoration: none; font-size: 0.85rem; font-weight: 900;
-            text-transform: uppercase; border-radius: 5px; transition: 0.4s;
-        }
-        .btn-top:hover { background: var(--blanco-fuerte); color: #000; }
+        .logo-box { display: flex; align-items: center; gap: 8px; }
+        .logo-icon { width: 35px; filter: drop-shadow(0 0 5px var(--azul-ia)); }
+        .logo-text { font-weight: 900; letter-spacing: 2px; text-transform: uppercase; font-size: 1.1rem; color: var(--oro); }
 
-        @media (min-width: 768px) {
-            header { flex-direction: row; justify-content: space-between; padding: 25px 8%; }
-            .nav-links { width: auto; gap: 20px; }
-            .btn-top { padding: 15px 25px; }
-        }
-
-        /* --- HERO: LOGO GIGANTE --- */
+        /* --- HERO: IMPACTO TOTAL --- */
         .hero {
-            height: 100vh; display: flex; flex-direction: column;
+            min-height: 100vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
-            padding: 0 5%; background: radial-gradient(circle at center, #111 0%, #000 100%);
+            padding: 100px 5% 40px; background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
         .hero-img { 
-            width: 100%; 
-            max-width: 800px; /* LOGO GRANDE */
-            filter: drop-shadow(0 0 60px rgba(197, 160, 89, 0.5)); 
-            margin-bottom: 20px; 
+            width: 95%; max-width: 1200px; height: auto;
+            filter: drop-shadow(0 0 60px rgba(197, 160, 89, 0.4)); 
             animation: float 6s ease-in-out infinite; 
         }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         
-        .hero h1 { font-size: clamp(3.5rem, 12vw, 9rem); font-weight: 900; color: var(--blanco-fuerte); line-height: 0.85; text-transform: uppercase; letter-spacing: -3px; }
+        .hero h1 { font-size: clamp(2.5rem, 12vw, 8rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; margin-top: 20px; letter-spacing: -2px; }
         .hero h1 span { color: var(--azul-ia); }
-        .hero p { letter-spacing: 12px; color: var(--oro); font-weight: 900; margin-top: 25px; text-transform: uppercase; font-size: 1.2rem; }
+        .hero p { letter-spacing: clamp(4px, 1.5vw, 10px); color: var(--oro); font-weight: 700; margin-top: 15px; text-transform: uppercase; font-size: clamp(0.7rem, 2vw, 1.1rem); }
 
-        /* --- VÍDEO OFICIAL IBIZA --- */
-        .video-box { padding: 120px 5%; text-align: center; background: #000; }
-        .video-container { width: 100%; max-width: 480px; margin: 0 auto; border: 4px solid var(--oro); border-radius: 45px; overflow: hidden; box-shadow: 0 0 100px rgba(197, 160, 89, 0.2); }
-        .video-container iframe { width: 100%; height: 850px; border: none; }
+        /* --- VÍDEO (VERTICAL IBIZA) --- */
+        .video-box { padding: 60px 5%; background: #000; text-align: center; }
+        .video-container { 
+            width: 100%; max-width: 360px; margin: 0 auto; 
+            border: 3px solid var(--oro); border-radius: 35px; 
+            overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 0 40px rgba(197, 160, 89, 0.2);
+        }
+        .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        /* --- PORTFOLIO: IMAGEN AGENCIA (AZUL) Y CRISTAL --- */
-        .portfolio-ibiza { padding: 100px 5%; text-align: center; background: #000; }
-        .portfolio-ibiza h2 { color: var(--oro); font-size: 2.8rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 5px; font-weight: 900; }
-        .img-maestra { width: 100%; max-width: 900px; border-radius: 20px; border: 3px solid var(--azul-ia); margin-bottom: 60px; box-shadow: 0 0 60px rgba(0, 242, 255, 0.2); }
-        .img-secundaria { width: 100%; max-width: 700px; border-radius: 15px; border: 2px solid var(--oro); margin-bottom: 40px; }
+        /* --- RESEÑAS ADAPTATIVAS (4) --- */
+        .reviews-container { padding: 80px 5%; background: #050505; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1300px; margin: 0 auto; }
+        .rev-card { background: var(--gris-luxe); padding: 30px; border-radius: 15px; border: 1px solid var(--oro); text-align: left; transition: 0.3s; }
+        .stars { color: #FFD700; margin-bottom: 12px; font-size: 1.1rem; }
+        .rev-card p { font-style: italic; font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9; }
+        .rev-author { font-weight: 900; color: var(--azul-ia); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- RESEÑAS GOLD (PIEL BLANCA FUERTE) --- */
-        .reviews-section { padding: 100px 5%; text-align: center; background: #000; }
-        .rev-card { background: var(--gris-luxe); padding: 60px 30px; border-radius: 20px; border: 3px solid var(--oro); max-width: 850px; margin: 0 auto 40px; }
-        .rev-card p { color: var(--blanco-fuerte); font-size: 1.6rem; font-weight: 900; font-style: italic; text-transform: uppercase; line-height: 1.2; letter-spacing: 1px; }
-        .avatar { width: 110px; height: 110px; border-radius: 50%; border: 4px solid var(--oro); margin-bottom: 25px; object-fit: cover; }
-        .stars { color: #FFD700; font-size: 2.5rem; margin-bottom: 20px; }
+        /* --- FORMULARIO DE ALTA --- */
+        .form-section { padding: 80px 5%; }
+        .form-wrapper { max-width: 500px; margin: 0 auto; border: 2px solid var(--oro); padding: 35px; border-radius: 20px; background: #000; }
+        input { width: 100%; padding: 18px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: #fff; border-radius: 8px; font-size: 1rem; }
+        .btn-main { width: 100%; padding: 22px; background: var(--oro); font-weight: 900; border: none; cursor: pointer; border-radius: 8px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; transition: 0.3s; }
+        .btn-main:hover { background: #fff; color: #000; }
 
-        /* --- TARIFAS IBIZA --- */
-        .servicios { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--gris-luxe); padding: 60px 30px; border: 3px solid #333; border-radius: 20px; text-align: center; }
-        .card h3 { color: var(--oro); font-size: 2.2rem; margin-bottom: 25px; text-transform: uppercase; font-weight: 900; }
-        .card li { list-style: none; color: var(--blanco-fuerte); font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
-        .card b { color: var(--azul-ia); }
+        /* --- BOTONES FLOTANTES --- */
+        .wsp-float {
+            position: fixed; bottom: 25px; right: 25px;
+            background: var(--whatsapp); width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 2000; transition: 0.3s;
+        }
+        #btnUp {
+            position: fixed; bottom: 95px; right: 25px;
+            background: rgba(255, 255, 255, 0.05); width: 60px; height: 60px; border-radius: 50%;
+            display: none; justify-content: center; align-items: center;
+            border: 1px solid var(--oro); backdrop-filter: blur(10px);
+            z-index: 2000; cursor: pointer; transition: 0.3s;
+        }
 
-        /* --- FORMULARIO ALTA TERMINAL --- */
-        .form-section { padding: 120px 5%; background: var(--gris-luxe); }
-        .form-wrapper { max-width: 850px; margin: 0 auto; background: #000; padding: 80px 40px; border: 4px solid var(--oro); border-radius: 20px; box-shadow: 0 0 100px rgba(0,0,0,1); }
-        .form-wrapper h2 { color: var(--oro); text-align: center; margin-bottom: 50px; font-size: 3rem; font-weight: 900; text-transform: uppercase; }
-        input { width: 100%; padding: 25px; margin-bottom: 30px; background: #111; border: 2px solid var(--blanco-fuerte); color: var(--blanco-fuerte); font-size: 1.4rem; font-weight: 900; outline: none; border-radius: 8px; }
-        .btn-main { width: 100%; padding: 30px; background: var(--oro); color: #000; font-weight: 900; font-size: 1.8rem; text-transform: uppercase; cursor: pointer; border-radius: 12px; border: none; letter-spacing: 5px; transition: 0.5s; }
-        .btn-main:hover { background: var(--blanco-fuerte); box-shadow: 0 0 60px var(--oro); }
+        /* --- FOOTER COMPLETO --- */
+        footer { padding: 60px 5%; text-align: center; border-top: 2px solid var(--oro); background: #000; }
+        .social-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+        .social-btn { padding: 10px 20px; border: 1px solid var(--oro); border-radius: 5px; color: var(--oro); text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+        .mail-link { color: var(--blanco-fuerte); text-decoration: none; font-weight: 900; font-size: 1.2rem; display: block; margin-bottom: 25px; }
 
-        /* --- FOOTER ORIGINAL (ESTILO CÁPSULA) --- */
-        footer { padding: 120px 5% 60px; text-align: center; background: #000; border-top: 3px solid #222; }
-        .footer-buttons { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 60px; }
-        .btn-footer { padding: 20px 45px; border: 3px solid var(--blanco-fuerte); border-radius: 60px; color: var(--blanco-fuerte); text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1rem; letter-spacing: 3px; transition: 0.4s; }
-        .btn-footer:hover { background: var(--blanco-fuerte); color: #000; }
-        
-        .email-link { color: var(--oro); text-decoration: none; font-weight: 900; font-size: 1.6rem; display: block; margin: 40px 0; letter-spacing: 1px; }
-        .legal-text { color: var(--blanco-fuerte); font-size: 0.9rem; letter-spacing: 6px; font-weight: 900; text-transform: uppercase; line-height: 2.8; }
-
-        #btnUp { position: fixed; bottom: 40px; right: 40px; width: 80px; height: 80px; background: rgba(1,1,1,0.9); border: 3px solid var(--azul-ia); color: var(--azul-ia); border-radius: 50%; cursor: pointer; display: none; justify-content: center; align-items: center; z-index: 3000; backdrop-filter: blur(10px); }
+        /* --- AJUSTES EXTRA MÓVIL --- */
+        @media (max-width: 600px) {
+            .hero-img { width: 110%; max-width: 110%; margin-left: -5%; }
+            .form-wrapper { padding: 25px 15px; }
+            #btnUp, .wsp-float { width: 55px; height: 55px; right: 15px; }
+            #btnUp { bottom: 85px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-box">
-            <img src="https://i.imgur.com/Pt7TbSj.png" alt="Herio IA Icono" class="logo-icon">
+            <img src="https://i.imgur.com/Pt7TbSj.png" class="logo-icon" alt="Herio IA">
             <div class="logo-text">HERIO IA</div>
         </div>
-        <nav class="nav-links">
-            <a href="#video" class="btn-top">Vídeo</a>
-            <a href="#negocios" class="btn-top">Negocios</a>
-            <a href="#contacto" class="btn-top" style="background: var(--oro); color: #000; border-color: var(--oro);">ALTA VIP</a>
-        </nav>
     </header>
 
     <section class="hero">
-        <img src="https://i.imgur.com/sDZ2Db6.png" class="hero-img" alt="Herio IA Logo Oro">
+        <img src="https://i.imgur.com/sDZ2Db6.png" class="hero-img" alt="Logo Max Herio">
         <h1>DOMINIO <span>TOTAL</span></h1>
-        <p>IBIZA • DESDE 2019</p>
+        <p>IBIZA • SOCIO ESTRATÉGICO • 2026</p>
     </section>
 
-    <section id="video" class="video-box">
+    <section class="video-box">
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/4bi4TGsZjI8?autoplay=1&mute=1&loop=1&playlist=4bi4TGsZjI8" allow="autoplay; fullscreen"></iframe>
         </div>
     </section>
 
-    <section id="negocios" class="portfolio-ibiza">
-        <h2>Negocios de Élite Ibiza</h2>
-        <img src="https://i.imgur.com/xo9q5p5.png" class="img-maestra" alt="Agencia Ibiza">
-        <p style="color: var(--blanco-fuerte); font-size: 1.4rem; font-weight: 900; letter-spacing: 4px; margin-top: 30px;">BEACH CLUBS • VILLAS • EVENTOS 4K • RESTAURACIÓN</p>
-        <img src="https://i.imgur.com/asU0tou.png" class="img-secundaria" alt="Diseño IA Cristal">
-    </section>
-
-    <section id="opiniones" class="reviews-section">
-        <div class="rev-card">
-            <img src="https://i.pravatar.cc/150?u=socioibz" class="avatar">
-            <div class="stars">★★★★★</div>
-            <p>"LA MEJOR GESTIÓN ESTRATÉGICA DE LA ISLA. DESDE 2019 LIDERANDO EL MERCADO DIGITAL CON RESULTADOS REALES."</p>
-        </div>
-    </section>
-
-    <section class="servicios">
-        <div class="card">
-            <h3>Web & E-com</h3>
-            <ul>
-                <li>• WEB BÁSICA: <b>199€</b></li>
-                <li>• TIENDA ONLINE: <b>499€</b></li>
-            </ul>
-        </div>
-        <div class="card" style="border-color: var(--oro); transform: scale(1.05);">
-            <h3>Dominio IA</h3>
-            <ul>
-                <li>• GOOGLE MAPS TOP 1</li>
-                <li>• VÍDEO ADS 4K: <b>49€</b></li>
-            </ul>
+    <section class="reviews-container">
+        <h2 style="color:var(--oro); margin-bottom:40px; text-transform:uppercase; letter-spacing:3px;">Reseñas Gold</h2>
+        <div class="reviews-grid">
+            <div class="rev-card">
+                <div class="stars">★★★★★</div>
+                <p>"Los vídeos 4K y la estrategia de IA nos pusieron en el mapa este verano. Resultados brutales."</p>
+                <div class="rev-author">- Beach Club Ibiza</div>
+            </div>
+            <div class="rev-card">
+                <div class="stars">★★★★★</div>
+                <p>"Atención 24/7. Profesionales que conocen el mercado de lujo de la isla a la perfección."</p>
+                <div class="rev-author">- Luxury Villas Soc.</div>
+            </div>
+            <div class="rev-card">
+                <div class="stars">★★★★★</div>
+                <p>"Desde 2019 liderando. No hay competencia para Herio IA en marketing de élite."</p>
+                <div class="rev-author">- Marina Restaurante</div>
+            </div>
+            <div class="rev-card">
+                <div class="stars">★★★★★</div>
+                <p>"El sistema de Google Maps Top 1 funciona. Mi negocio no para de recibir llamadas."</p>
+                <div class="rev-author">- Eventos Ibiza</div>
+            </div>
         </div>
     </section>
 
     <section id="contacto" class="form-section">
         <div class="form-wrapper">
-            <h2>Alta de Socio</h2>
+            <h2 style="color:var(--oro); text-align:center; margin-bottom:25px; text-transform:uppercase;">Alta de Socio</h2>
             <input type="text" id="negocio" placeholder="NOMBRE DEL NEGOCIO">
-            <input type="text" id="zona" placeholder="ZONA DE IBIZA / FORMENTERA">
-            <button class="btn-main" onclick="activarTerminal()">ACTIVAR TERMINAL 641905184</button>
+            <input type="text" id="zona" placeholder="ZONA IBIZA / FORMENTERA">
+            <button class="btn-main" onclick="activarTerminal()">ACTIVAR PROTOCOLO</button>
         </div>
     </section>
 
-    <button id="btnUp" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-        <svg viewBox="0 0 24 24" style="width:35px; fill:none; stroke:currentColor; stroke-width:3;"><path d="M18 15l-6-6-6 6"/></svg>
-    </button>
+    <div id="btnUp" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" width="25" stroke="var(--oro)" stroke-width="3" fill="none"><path d="M18 15l-6-6-6 6"/></svg>
+    </div>
+
+    <a href="https://wa.me/34641905184" class="wsp-float" target="_blank">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-1.157-.459-2.036-1.25-.7-.631-1.272-1.484-1.557-1.907-.284-.424-.056-.653.189-.833.13-.095.284-.338.427-.507.143-.17.191-.282.285-.47.095-.188.047-.353-.023-.495-.071-.141-.617-1.483-.846-2.029-.224-.533-.45-.459-.617-.467-.159-.008-.342-.01-.524-.01s-.48.068-.73.342c-.25.274-.955.932-.955 2.273s.977 2.636 1.114 2.822c.136.185 1.92 2.931 4.65 4.111.648.28 1.154.448 1.547.573.653.207 1.247.178 1.716.108.523-.078 1.609-.657 1.837-1.294.228-.636.228-1.183.16-1.294-.069-.113-.251-.18-.534-.321z"/></svg>
+    </a>
 
     <footer>
-        <div class="footer-buttons">
-            <a href="https://youtube.com/@herio-c5w" target="_blank" class="btn-footer">YouTube</a>
-            <a href="https://www.tiktok.com/@herioai" target="_blank" class="btn-footer">TikTok</a>
-            <a href="https://wa.me/34641905184" class="btn-footer" style="border-color: var(--whatsapp); color: var(--whatsapp);">WhatsApp</a>
+        <div class="social-links">
+            <a href="https://youtube.com/@herio-c5w" target="_blank" class="social-btn">YouTube</a>
+            <a href="https://www.tiktok.com/@herioai" target="_blank" class="social-btn">TikTok</a>
+            <a href="https://wa.me/34641905184" target="_blank" class="social-btn" style="border-color:var(--whatsapp); color:var(--whatsapp);">WhatsApp</a>
         </div>
-        
-        <a href="mailto:Herioagenciabiza@gmail.com" class="email-link">Herioagenciabiza@gmail.com</a>
-        
-        <div class="legal-text">
-            <p>© HERIO IA IBIZA 2026 | EXPERIENCIAS DESDE 2019</p>
-            <p>SISTEMA CONECTADO AL TERMINAL: 641905184</p>
+        <a href="mailto:Herioagenciabiza@gmail.com" class="mail-link">Herioagenciabiza@gmail.com</a>
+        <div style="font-size:0.7rem; opacity:0.4; text-transform:uppercase; letter-spacing:2px;">
+            © HERIO IA IBIZA 2026 | DESDE 2019 | SOCIO: 641905184
         </div>
     </footer>
 
     <script>
-        window.onscroll = function() { document.getElementById("btnUp").style.display = (window.scrollY > 600) ? "flex" : "none"; };
-        
+        // Lógica de Scroll y Botón Up
+        window.onscroll = function() {
+            const btn = document.getElementById("btnUp");
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
         function activarTerminal() {
             const n = document.getElementById('negocio').value;
             const z = document.getElementById('zona').value;
             if(!n || !z) return alert("Socio, rellena los datos.");
-            
-            const texto = encodeURIComponent(`🚨 ALTA IBIZA 2026 🚨\n\nNegocio: ${n}\nZona: ${z}\n\nActivar protocolo Herio IA.`);
-            window.open(`https://wa.me/34641905184?text=${texto}`, '_blank');
+            window.open(`https://wa.me/34641905184?text=Protocolo%20Alta%202026%3A%20${n}%20en%20${z}`, '_blank');
         }
     </script>
 </body>
-            </html>
-        
+</html>
