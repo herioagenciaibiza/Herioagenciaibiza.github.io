@@ -4,10 +4,9 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>HERIO IA | Ibiza 2026 - Proyecto Maestro Total</title>
+    <title>HERIO IA | Ibiza 2026 - Gold & White Edition</title>
     
     <link rel="icon" type="image/png" href="https://i.imgur.com/zn1NUFh.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -19,7 +18,7 @@ index.html
             --whatsapp: #25d366;
         }
 
-        /* --- RESET Y PIEL MAESTRA --- */
+        /* --- ARQUITECTURA MAESTRA --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--negro); color: var(--blanco-fuerte); line-height: 1.4; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
@@ -36,64 +35,31 @@ index.html
         .logo-text span { color: var(--oro); }
         
         .nav-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; width: 100%; }
-        .btn-top { padding: 8px 12px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; border-radius: 4px; }
+        .btn-top { padding: 8px 12px; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
+        .btn-top:hover { background: var(--oro); color: #000; }
 
-        /* --- HERO: FOTO AUTORIDAD PRINCIPAL --- */
+        /* --- HERO: IMAGEN DE AUTORIDAD (3 FOTOS) --- */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 5% 60px; background: #000; }
-        .hero-img { width: 100%; max-width: 800px; border-radius: 20px; border: 2px solid var(--oro); box-shadow: 0 0 50px rgba(197, 160, 89, 0.3); margin-bottom: 30px; }
+        .hero-img { width: 100%; max-width: 850px; border-radius: 20px; border: 2px solid var(--oro); box-shadow: 0 0 50px rgba(197, 160, 89, 0.3); margin-bottom: 30px; }
         h1 { font-size: clamp(2rem, 8vw, 5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
         h1 span { color: var(--oro); }
+        .hero p { font-size: clamp(0.9rem, 3vw, 1.3rem); color: var(--oro); font-weight: 900; letter-spacing: 5px; text-transform: uppercase; }
 
-        /* --- GALERÍA TRIPLE DE PODER --- */
-        .authority-gallery { padding: 60px 5%; background: var(--gris-luxe); text-align: center; }
+        /* --- GALERÍA DE SISTEMAS --- */
+        .authority { padding: 60px 5%; background: var(--gris-luxe); text-align: center; border-bottom: 1px solid var(--oro); }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .gal-card { border: 1px solid var(--oro); border-radius: 15px; overflow: hidden; background: #000; }
+        .gal-card { border: 1px solid var(--oro); border-radius: 15px; overflow: hidden; background: #000; transition: 0.4s; }
         .gal-card img { width: 100%; display: block; filter: brightness(0.9); }
+        .gal-card:hover { transform: scale(1.02); }
         .gal-card p { padding: 15px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; color: var(--oro); }
 
-        /* --- TARIFAS ÉLITE --- */
-        .pricing { padding: 80px 5%; text-align: center; background: #000; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .price-card { background: var(--gris-luxe); border: 1px solid var(--oro); padding: 40px 20px; border-radius: 20px; transition: 0.3s; }
-        .price-card:hover { transform: translateY(-10px); }
-        .price-card h3 { color: var(--oro); font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; }
-        .amount { font-size: 2.8rem; font-weight: 900; display: block; margin-bottom: 20px; }
-        .price-card li { list-style: none; margin-bottom: 10px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; border-left: 2px solid var(--oro); padding-left: 10px; text-align: left; }
-
-        /* --- VIDEO 4K --- */
-        .video-box { padding: 60px 5%; text-align: center; background: #000; }
-        .video-container { width: 100%; max-width: 420px; margin: 0 auto; border: 4px solid var(--oro); border-radius: 35px; overflow: hidden; }
+        /* --- VIDEO OFICIAL --- */
+        .video-box { padding: 80px 5%; text-align: center; background: #000; }
+        .video-container { width: 100%; max-width: 420px; margin: 0 auto; border: 4px solid var(--oro); border-radius: 35px; overflow: hidden; box-shadow: 0 0 50px rgba(197, 160, 89, 0.2); }
         .video-container iframe { width: 100%; height: 650px; border: none; }
-
-        /* --- RESEÑAS GOLD --- */
-        .reviews { padding: 80px 5%; background: var(--gris-luxe); text-align: center; }
-        .rev-card { max-width: 400px; background: #000; border: 1px solid var(--oro); padding: 30px; border-radius: 20px; text-align: left; }
-
-        /* --- FORMULARIO MAESTRO GRANDE --- */
-        .form-section { padding: 80px 5%; background: #000; border-top: 3px solid var(--oro); }
-        .form-wrapper { max-width: 900px; margin: 0 auto; background: var(--gris-luxe); padding: 60px 40px; border-radius: 30px; border: 1px solid var(--oro); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        input, select, textarea { width: 100%; padding: 20px; background: #000; border: 1px solid #333; color: #fff; font-weight: 700; border-radius: 10px; outline: none; }
-        textarea { grid-column: span 2; height: 120px; resize: none; }
-        .btn-main { grid-column: span 2; padding: 25px; background: var(--blanco-fuerte); color: #000; font-weight: 900; font-size: 1.4rem; border: none; cursor: pointer; text-transform: uppercase; border-radius: 15px; transition: 0.3s; }
-        .btn-main:hover { background: var(--oro); box-shadow: 0 0 40px var(--oro); }
-
-        /* --- SOCIAL --- */
-        .social-footer { padding: 50px 5%; text-align: center; background: #000; border-top: 1px solid #222; }
-        .social-icons { display: flex; justify-content: center; gap: 40px; margin-bottom: 20px; }
-        .social-icons a img { width: 35px; filter: invert(1); }
-
-        /* --- FLOTANTES --- */
-        .float-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 5000; }
-        #wa-float { background: var(--whatsapp); width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px var(--whatsapp); }
-        #up-float { background: var(--oro); width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; font-weight: 900; text-decoration: none; }
-
-        footer { padding: 40px 5%; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
-        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .btn-main, textarea { grid-column: span 1; } }
     </style>
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo-box" onclick="window.scrollTo(0,0)">
@@ -102,8 +68,7 @@ index.html
             </div>
             <nav class="nav-links">
                 <a href="#inicio" class="btn-top">Inicio</a>
-                <a href="#tarifas" class="btn-top">Tarifas</a>
-                <a href="#video" class="btn-top">Vídeo</a>
+                <a href="#precios" class="btn-top">Tarifas</a>
                 <a href="#contacto" class="btn-top">Alta VIP</a>
             </nav>
         </div>
@@ -112,11 +77,11 @@ index.html
     <section id="inicio" class="hero">
         <img src="https://i.imgur.com/biO4FW8.png" class="hero-img" alt="Herio IA Authority">
         <h1>DISPARA TU NEGOCIO EN LA <br><span>PRIMERA SEMANA</span></h1>
-        <p style="color:var(--oro); font-weight:900; letter-spacing:5px;">INGENIERÍA DIGITAL IBIZA DESDE 2019</p>
+        <p>INGENIERÍA DIGITAL IBIZA DESDE 2019</p>
     </section>
 
-    <section class="authority-gallery">
-        <h2 style="margin-bottom:40px; text-transform:uppercase;">SISTEMAS DE PODER</h2>
+    <section class="authority">
+        <h2 style="margin-bottom:40px; text-transform:uppercase;">DOMINIO VISUAL</h2>
         <div class="gallery-grid">
             <div class="gal-card"><img src="https://i.imgur.com/xo9q5p5.png" alt="Agencia Azul"><p>AGENCIA AZUL</p></div>
             <div class="gal-card"><img src="https://i.imgur.com/asU0tou.png" alt="Diseño Cristal"><p>DISEÑO CRISTAL</p></div>
@@ -124,47 +89,76 @@ index.html
         </div>
     </section>
 
-    <section id="tarifas" class="pricing">
+    <section class="video-box">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/4bi4TGsZjI8?autoplay=1&mute=1&loop=1&playlist=4bi4TGsZjI8" allow="autoplay; fullscreen"></iframe>
+        </div>
+    </section>
+    <style>
+        .pricing { padding: 80px 5%; background: var(--gris-luxe); text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .price-card { background: #000; border: 1px solid var(--oro); padding: 40px 20px; border-radius: 20px; transition: 0.3s; }
+        .price-card h3 { color: var(--oro); font-size: 1.5rem; margin-bottom: 15px; text-transform: uppercase; }
+        .amount { font-size: 2.8rem; font-weight: 900; display: block; margin-bottom: 20px; }
+        .price-card li { list-style: none; margin-bottom: 10px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; border-left: 2px solid var(--oro); padding-left: 10px; text-align: left; }
+
+        .reviews { padding: 80px 5%; background: #000; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .rev-card { background: var(--gris-luxe); border: 1px solid var(--oro); padding: 30px; border-radius: 20px; text-align: left; }
+        .stars { color: #FFD700; margin-bottom: 10px; font-size: 1.2rem; }
+
+        .form-section { padding: 80px 5%; background: var(--gris-luxe); border-top: 3px solid var(--oro); }
+        .form-wrapper { max-width: 900px; margin: 0 auto; background: #000; padding: 60px 40px; border-radius: 30px; border: 1px solid var(--oro); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        input, select, textarea { width: 100%; padding: 20px; background: #0a0a0a; border: 1px solid #333; color: #fff; font-weight: 700; border-radius: 10px; outline: none; }
+        textarea { grid-column: span 2; height: 120px; resize: none; }
+        .btn-main { grid-column: span 2; padding: 25px; background: var(--blanco-fuerte); color: #000; font-weight: 900; font-size: 1.4rem; border: none; cursor: pointer; text-transform: uppercase; border-radius: 15px; transition: 0.3s; }
+        .btn-main:hover { background: var(--oro); box-shadow: 0 0 40px var(--oro); }
+
+        .social-footer { padding: 50px 5%; text-align: center; background: #000; border-top: 1px solid #222; }
+        .social-icons { display: flex; justify-content: center; gap: 40px; margin-bottom: 20px; }
+        .social-icons a img { width: 35px; filter: invert(1); transition: 0.3s; }
+        .social-icons a:hover img { transform: scale(1.2); filter: invert(0) sepia(1) saturate(5); }
+
+        .float-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 5000; }
+        #wa-float { background: var(--whatsapp); width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px var(--whatsapp); }
+        #up-float { background: var(--oro); width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; font-weight: 900; text-decoration: none; }
+        
+        footer { padding: 40px 5%; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 2px; }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .btn-main, textarea { grid-column: span 1; } .header-container { flex-direction: column; } }
+    </style>
+
+    <section id="precios" class="pricing">
         <h2 style="color:var(--oro); margin-bottom:50px;">TARIFAS GOLD 2026</h2>
         <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Diseño & Video</h3>
-                <span class="amount">49€ <span>/Desde</span></span>
-                <ul><li>• REELS 4K VIRALES</li><li>• BRANDING LUXURY</li><li>• EDICIÓN PRO</li></ul>
-            </div>
-            <div class="price-card" style="border-width: 3px;">
-                <h3>SEO Local Maps</h3>
-                <span class="amount">199€ <span>/Desde</span></span>
-                <ul><li>• TOP 1 GOOGLE MAPS</li><li>• RESULTADOS 7 DÍAS</li><li>• AUDITORÍA NUCLEAR</li></ul>
-            </div>
-            <div class="price-card">
-                <h3>Web & Ads</h3>
-                <span class="amount">499€ <span>/Desde</span></span>
-                <ul><li>• DISEÑO WEB ÉLITE</li><li>• GESTIÓN ADS VIP</li><li>• SOPORTE 24/7</li></ul>
-            </div>
+            <div class="price-card"><h3>Diseño & Video</h3><span class="amount">49€ <span>/Desde</span></span><ul><li>• REELS 4K</li><li>• BRANDING</li></ul></div>
+            <div class="price-card" style="border-width: 3px;"><h3>SEO Local Maps</h3><span class="amount">199€ <span>/Desde</span></span><ul><li>• TOP 1 MAPS</li><li>• 7 DÍAS</li></ul></div>
+            <div class="price-card"><h3>Web & Ads</h3><span class="amount">499€ <span>/Desde</span></span><ul><li>• WEB ÉLITE</li><li>• ADS VIP</li></ul></div>
         </div>
     </section>
 
-    <section id="video" class="video-box">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/4bi4TGsZjI8?autoplay=1&mute=1&loop=1&playlist=4bi4TGsZjI8" allow="autoplay; fullscreen"></iframe>
+    <section class="reviews">
+        <h2 style="color:var(--oro); margin-bottom:50px; text-transform:uppercase;">SOCIOS DE AUTORIDAD</h2>
+        <div class="reviews-grid">
+            <div class="rev-card"><div class="stars">★★★★★</div><p>"TOP 1 EN MAPS EN 5 DÍAS."</p><b>BEACH CLUB</b></div>
+            <div class="rev-card"><div class="stars">★★★★★</div><p>"CALIDAD 4K INCREÍBLE."</p><b>VILLA OWNER</b></div>
+            <div class="rev-card"><div class="stars">★★★★★</div><p>"RESULTADOS REALES."</p><b>YACHT VIP</b></div>
         </div>
     </section>
 
     <section id="contacto" class="form-section">
         <div class="form-wrapper">
             <h2>SOLICITAR ALTA PROTOCOLO</h2>
-            <p style="color:var(--oro); margin-bottom:40px; font-weight:900;">TERMINAL DIRECTO: 641905184</p>
+            <p style="color:var(--oro); margin-bottom:40px; font-weight:900;">TERMINAL: 641905184</p>
             <div class="form-grid">
-                <input type="text" id="negocio" placeholder="NOMBRE DEL NEGOCIO">
-                <input type="text" id="telefono" placeholder="TELÉFONO / WHATSAPP">
+                <input type="text" id="negocio" placeholder="NOMBRE NEGOCIO">
+                <input type="text" id="telefono" placeholder="TELÉFONO / WA">
                 <select id="servicio">
                     <option value="none">SELECCIONAR SERVICIO</option>
-                    <option value="SEO Maps">SEO GOOGLE MAPS</option>
-                    <option value="Video">VÍDEO 4K & REELS</option>
-                    <option value="Web">WEB ÉLITE</option>
+                    <option value="SEO">SEO MAPS</option>
+                    <option value="Video">VIDEO 4K</option>
                 </select>
-                <textarea id="mensaje" placeholder="DETALLES ADICIONALES..."></textarea>
+                <textarea id="mensaje" placeholder="DETALLES PROYECTO..."></textarea>
                 <button class="btn-main" onclick="enviar()">DISPARAR TERMINAL 641905184</button>
             </div>
         </div>
@@ -172,10 +166,11 @@ index.html
 
     <div class="social-footer">
         <div class="social-icons">
+            <a href="https://www.facebook.com/share/1REQQ19YVB/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="FB"></a>
+            <a href="https://www.tiktok.com/@herioai" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TK"></a>
             <a href="https://instagram.com/herioia" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="IG"></a>
-            <a href="https://tiktok.com/@herioia" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TK"></a>
         </div>
-        <p style="color:var(--oro); font-weight:900; letter-spacing:3px;">HERIO IA GOLD EDITION</p>
+        <p style="color:var(--oro); font-weight:900;">HERIO IA GOLD EDITION</p>
     </div>
 
     <div class="float-buttons">
@@ -183,15 +178,14 @@ index.html
         <a href="https://wa.me/34641905184" id="wa-float" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="40"></a>
     </div>
 
-    <footer>TERMINAL: 641905184 | HERIOAGENCIABIZA@GMAIL.COM | © DESDE 2019</footer>
+    <footer>TERMINAL: 641905184 | HERIOAGENCIABIZA@GMAIL.COM | © 2019</footer>
 
     <script>
         function enviar() {
             const n = document.getElementById('negocio').value;
             const t = document.getElementById('telefono').value;
-            if(!n || !t) return alert("Socio, rellena los datos.");
-            const msg = encodeURIComponent(`🚨 ALTA GOLD 🚨\nNegocio: ${n}\nTel: ${t}`);
-            window.open(`https://wa.me/34641905184?text=${msg}`, '_blank');
+            if(!n || !t) return alert("Rellena los datos, socio.");
+            window.open(`https://wa.me/34641905184?text=Protocolo%20Gold:%20${n}`, '_blank');
         }
     </script>
 </body>
